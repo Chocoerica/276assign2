@@ -1,10 +1,25 @@
-﻿body {
+﻿
+/*
+Palette:
+    #ECFEEF - light green
+    #386C5F - darker green
+    #F06071 - darker pink
+    #FFF3F3 - light rose pink
+    White
+*/ 
+
+
+body {
     background-color: #ECFEEF;
+}
+p{
+    text-align:center;
 }
 h2 {
     margin-left: 10px;
     margin-top: 20px;
     color: #386C5F;
+    text-align:center;
 }
 .block {
     background-color:#F06071;
@@ -14,22 +29,36 @@ h2 {
 }
 .white {
     background-color: white;
-    width: 85%;
+    width: 90%;
+    margin-left:3%;
 }
-ul.tokimans li {
-    width: 200px;
-    height:200px;
-    display: inline-block;
+div.display {
+    opacity: 1;
+    background-color: white;
+    height: 99%;
+    width: 99%;
     border: dashed;
     border-color: #FFF3F3;
+}
+    div.display:hover {
+        transform: scale(1.1);
+    }
+ul.tokimans li {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
     vertical-align: top;
+    margin:5px;
 }
 a {
-    border:2px solid;
     color: #386C5F;
     text-decoration: none;
-    transition: 1s ease-in-out;
+    height: 90%;
+    width: 90%;
 }
-    a:hover {
-        
-    }
+
+img.logo{
+    width: 250px;
+    height:auto;
+}
+    

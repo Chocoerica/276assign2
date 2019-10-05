@@ -15,6 +15,13 @@ body {
 p{
     text-align:center;
 }
+p.leftside{
+    margin-left:10px;
+    text-align:left;
+    width:400px;
+    display:inline-block;
+    font-size:17px;
+}
 h2 {
     margin-left: 10px;
     margin-top: 20px;
@@ -61,4 +68,42 @@ img.logo{
     width: 250px;
     height:auto;
 }
-    
+   
+table{
+    margin-left:100px;
+    margin-right:20px;
+    display:inline-block;
+}
+td{
+    padding:10px 40px 5px 5px;
+    font-size: 17px;
+}
+#attributediv {
+    display: inline-block;
+    margin-left: 100px;
+    width:50%;
+}
+#wisequotation{
+    font-style:italic;
+    font-family:Papyrus, cursive;
+}
+input{
+    margin-right:10px;
+}
+button {
+    background-color: #FFF3F3;
+    color: #386C5F;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5%;
+    width: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-content: center;
+    margin-left: 45%;
+    transition-duration: 0.6s;
+    border: hidden;
+}
+    button:hover {
+        background-color: #FFC0C0;
+    }

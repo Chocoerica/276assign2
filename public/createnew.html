@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Create a new tokimon</title>
+    <link rel="stylesheet" href="stylesheets/home.css" />
+</head>
+<body>
+    <a class="Header" href="homepage.html">
+        <img class="logo" src="images/filltitle.PNG" alt="tokimon logo" />
+    </a>
+
+    <div class="white">
+        <div class="block"> </div>
+        <h2> Create a new Tokimon </h2>
+        <form class="create" action="" method="post">
+            <p class="leftside">Trainer Name</p>
+            <input type="text" id="trainerin" name="trainer" value="" placeholder="Trainer Name" />
+            <p class="leftside">Tokimon Name</p>
+            <input type="text" id="name" name="name" value="" placeholder="Tokimon Name" />
+            <p class="leftside">Weight</p>
+            <input type="number" min="0" id="weightin" name="weight" value="" placeholder="--lb" />
+            <p class="leftside">Height</p>
+            <input type="number" min="0" id="heightin" name="height" value="" placeholder="--cm" />
+            <p class="leftside">Speed</p>
+            <input type="number" min="0" id="speedin" name="speed" value="" placeholder="--m/s" />
+            <br />
+            <h2 style="font-size:19px;"> Attributes </h2>
+
+            <table>
+                <tr>
+                    <td>Flight </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="flyin" name="fly" value="0" placeholder="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fight </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="fightin" name="fight" value="0" placeholder="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fire </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="firein" name="fire" value="0" placeholder="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Water </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="waterin" name="water" value="0" placeholder="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Electric </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="electin" name="elect" value="0" placeholder="0" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ice </td>
+                    <td>
+                        <input type="number" min="0" max="100" id="icein" name="ice" value="0" placeholder="0" />
+                    </td>
+                </tr>
+            </table>
+            <div id="attributediv">
+                <p id="wisequotation"> "To meet a Tokimon is to meet a force of nature. To study a Tokimon is to find the true essence of nature. To train a Tokimon is to be the very best in nature."</p>
+                <p id="wisequotation"> -- Master of Tokimon</p>
+            </div>
+            <br />
+            <button> Save </button>
+        </form>
+        
+        <div class="block"> </div>
+    </div>
+</body>
+</html>

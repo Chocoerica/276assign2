@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <title>Tokimon Home</title>
     <link rel="stylesheet" href="stylesheets/home.css" />
-	<link rel="" href=""/>
 </head>
 <body>
     <a class="Header"href="/">
@@ -14,22 +13,17 @@
     
     <div class="white">
         <div class="block"> </div>
-        <h2> My Tokimons </h2>
+        <h2>  </h2>
         <ul class="tokimans">
-			<%var sid=0;%>
 			<% rows.forEach((r)=>{ %>
 				<li>
-                    <div class="display">
 						<p><%=r.name %></p>
 						<p>Caught By: <%=r.trainer %></p>
 						<p>Height: <%=r.height %></p>
 						<p>Weight: <%=r.weight%></p>
 						<p>Speed: <%=r.speed %></p>
-						<input type="hidden" name="sid" value=""/>
-						
-                    </div>
-				</li>
-			<%sid=sid+1;%>
+                    
+                </li>
 			<% }); %>
             <li>
                 

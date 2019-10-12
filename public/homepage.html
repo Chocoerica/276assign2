@@ -7,72 +7,38 @@
     <link rel="stylesheet" href="stylesheets/home.css" />
 </head>
 <body>
-    <a class="Header"href="homepage.html">
-        <img class ="logo" src="images/filltitle.PNG" alt="tokimon logo"/>
+    <a class="Header" href="/">
+        <img class="logo" src="images/filltitle.PNG" alt="tokimon logo" />
     </a>
-    
+
     <div class="white">
         <div class="block"> </div>
         <h2> My Tokimons </h2>
         <ul class="tokimans">
+            <% rows.forEach((r)=>{ %>
             <li>
                 <a href="">
                     <div class="display">
-                        <p class="tokiname">Tokiman 1</p>
+                        <% = r.trainer %>
+                        <% = r.name %>
                     </div>
                 </a>
             </li>
+
+            <% }); %>
             <li>
-                <a href="">
-                    <div class="display">
-                        <p class="tokiname">Tokiman 2</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="display">
-                        <p class="tokiname">Tokiman 3</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="display">
-                        <p class="tokiname">Tokiman 4</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="display">
-                        <p class="tokiname">Tokiman 5</p>
-                    </div>
-                </a>
-                
-            </li>
-            <li>
-                
-                <a href="">
-                    <div class="display">
-                        <p class="tokiname">Tokiman 6</p>
-                    </div>
-                </a>
-                
-            </li>
-            <li>
-                
+
                 <a href="createnew.html">
                     <div class="display">
                         <p style="font-size: 100px; font-size:4vw">+</p>
                         <img />
-                        </div>
+                    </div>
                 </a>
             </li>
         </ul>
         <div class="block"> </div>
     </div>
 
-    
+
 </body>
 </html>

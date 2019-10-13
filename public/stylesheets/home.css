@@ -69,15 +69,15 @@ img.logo{
     height:auto;
 }
    
-table{
+table.create{
     margin-left:100px;
     margin-right:20px;
     display:inline-block;
 }
-td{
-    padding:10px 40px 5px 5px;
-    font-size: 17px;
-}
+    table.create td{
+        padding:10px 40px 5px 5px;
+        font-size: 17px;
+    }
 #attributediv {
     display: inline-block;
     margin-left: 100px;
@@ -106,4 +106,48 @@ button {
 }
     button:hover {
         background-color: #FFC0C0;
+    }
+/*
+    For Profile
+*/
+table.grid {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom:40px;
+    border: dashed;
+    border-width:4px;
+    border-color: #ECFEEF;
+    border-collapse:collapse;
+    width:70%;
+}
+    table.grid th {
+        background-color: #FFF3F3;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-family: 'New Century',serif;
+        font-weight: normal;
+    }
+    table.grid td{
+        font-size: 18px;
+        padding:10px;
+        
+    }
+    table.grid th, td {
+        border: dashed;
+        border-width: 4px;
+        border-color: #ECFEEF;
+        text-align: center;
+    }
+table.profile1{
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+    table.profile1 td {
+        font-size: 21px;
+        padding: 20px;
+        border: hidden;
     }

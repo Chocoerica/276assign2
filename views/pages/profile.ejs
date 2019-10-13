@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Tokimon Home</title>
     <link rel="stylesheet" href="stylesheets/home.css" />
+	<script src="profile.js" defer></script> 
 </head>
 <body>
     <a class="Header"href="/">
@@ -13,28 +14,58 @@
     
     <div class="white">
         <div class="block"> </div>
-        <h2>  </h2>
-        <ul class="tokimans">
-			<% rows.forEach((r)=>{ %>
-				<li>
-						<p><%=r.name %></p>
-						<p>Caught By: <%=r.trainer %></p>
-						<p>Height: <%=r.height %></p>
-						<p>Weight: <%=r.weight%></p>
-						<p>Speed: <%=r.speed %></p>
-                    
-                </li>
-			<% }); %>
-            <li>
-                
-                <a href="createnew.html">
-                    <div class="display">
-                        <p style="font-size: 100px; font-size:4vw">+</p>
-                        <img />
-                    </div>
-                </a>
-            </li>
-        </ul>
+        <h2><%=row.name%></h2>
+		<p id="id" ><%=row.id%></p>
+		<table class="profile1">
+		<tr>
+			<td> Caught By:</td>
+			<td> <%=row.trainer %></td>
+		</tr>
+		<tr>
+			<td> Height:</td>
+			<td><%=row.height %> cm</td>
+		</tr>
+		<tr>
+			<td> Weight:</td>
+			<td><%=row.weight%> lb.</td>
+		</tr>
+		<tr>
+			<td>Speed:	</td>
+			<td><%=row.speed %>m/s</td>
+		</tr>
+		</table>
+		<h2> Statistics: </h2>
+		
+		<table class="grid">
+			<tr>
+				<th>Flight </th>
+				<th>Fight </th>
+				<th>Fire </th>
+				<th>Water </th>
+				<th>Electric </th>
+				<th>Ice </th>
+				<th>Total </th>
+				
+            </tr>
+            <tr>
+				<td><%=row.fly%></td>
+                <td><%=row.fight%></td>
+				<td><%=row.fire%></td>
+				<td><%=row.water%></td>
+				<td><%=row.electric%></td>
+				<td><%=row.ice%></td>
+				<td><%=row.total%></td> 
+            </tr>
+        </table>
+		<br>
+		<form class="" onsubmit="return confirm('Do you really want to delete this Tokimon from the Tokidex?');" action="/delete" method="post">
+		<input type="hidden" id="delid" name = "sid"/>
+		<button id="delete"> Delete Tokimon </button>
+        </form>
+		<form class="" action="/edit" method="post">
+		<input type="hidden" id="editid" name = "sid"/>
+		<button> Edit Profile </button>
+        </form>
         <div class="block"> </div>
     </div>
 

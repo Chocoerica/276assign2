@@ -82,13 +82,34 @@ app.post('/delete', (req,res)=> {
 
 
 //Edit Profile of Tokimon
-/*
-app.post('/delete', (req,res)=> {
-    console.log(`Delete toki with id=${id}`);
-    //access database
-    var EditProfileQuery = ``;
-    console.log(DeleteProfileQuery);
-    pool.query(DeleteProfileQuery);
-    return res.redirect('/edit');
+//First load edit page:
+app.post('/edit', (req,res)=> {
+    var id = req.body.sid;
+    console.log(`Edit toki with id=${id}`);
+    var getProfileQuery = `SELECT * FROM tokimon WHERE id=${id};`;
+    console.log(getProfileQuery);
+    pool.query(getProfileQuery, (error, result)=>{
+        if (error)
+            res.end(error);
+        //console.log(result);
+        var results = {row: result.rows[0]};
+        console.log(results);
+        res.render('pages/editprofile',results);
+    });
+    
 });
-*/
+
+//After submit edit page:
+app.post('/savechanges', (req,res)=> {
+    var id= req.body.sid;
+    console.log('save changes');
+    var total = parseInt(req.body.fly) + parseInt(req.body.fight) + parseInt(req.body.fire) + parseInt(req.body.water) + parseInt(req.body.elect) + parseInt(req.body.ice);
+    //access database
+    var EditProfileQuery = "UPDATE tokimon SET trainer = ";
+    EditProfileQuery= EditProfileQuery + `'${req.body.trainer}', name='${req.body.name}', speed= '${req.body.speed}',`;
+    EditProfileQuery= EditProfileQuery + `weight='${req.body.weight}', height= '${req.body.height}', fly='${req.body.fly}', fight='${req.body.fight}', fire='${req.body.fire}', water='${req.body.water}', electric='${req.body.elect}', ice='${req.body.ice}', total='${total}' WHERE id=${id};`;
+    console.log(EditProfileQuery);
+    pool.query(EditProfileQuery);
+    return res.redirect('/');
+});
+

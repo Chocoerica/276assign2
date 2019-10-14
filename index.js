@@ -5,12 +5,12 @@ var app = express();
 
 //Add database
 const { Pool } = require('pg');
+
 var pool;
 pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl:true,
 });
-Pool.connect();
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 app.use(express.static(path.join(__dirname, 'public'))); //set static files

@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 //------------------------------------------------------------------
 // HOMEPAGE
 app.get('/', (req, res) => {
-    var getUsersQuery = `SELECT * FROM tokimon`; //use backticks
+    var getUsersQuery = `SELECT * FROM tokimon ORDER BY id ASC;`; //use backticks
     console.log(getUsersQuery);
     pool.query(getUsersQuery, (error,result)=>{         //send commands to psql, then get error, result from database
         if (error)              //run this function after getting result and error from database

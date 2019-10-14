@@ -15,6 +15,9 @@ body {
 p{
     text-align:center;
 }
+p.sid{
+    visibility:hidden;
+}
 p.leftside{
     margin-left:10px;
     text-align:left;
@@ -150,4 +153,21 @@ table.profile1{
         font-size: 21px;
         padding: 20px;
         border: hidden;
+    }
+
+/*
+    Selection and battle stuff
+*/
+div.select {
+    opacity: 1;
+    background-color: white;
+    height: 99%;
+    width: 99%;
+    border: dashed;
+    border-color: #FFF3F3;
+    transition-duration: 0.4s;
+}
+
+    div.select:hover {
+        background-color: #FFF3F3;
     }

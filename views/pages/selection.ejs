@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Tokimon Home</title>
     <link rel="stylesheet" href="stylesheets/home.css" />
-	<script src="homepage.js" defer></script> 
+	<script src="selectbattle.js" defer></script> 
 </head>
 
 <body>
@@ -15,12 +15,13 @@
     
     <div class="white">
         <div class="block"> </div>
-        <h2> My Tokimons </h2>
+        <h2> Battle Selection </h2>
+		<p>Select 2 Tokimons to Battle </p>
         <ul class="tokimans">
 			<%var sid=0;%>
 			<% rows.forEach((r)=>{ %>
 				<li>
-                    <div class="display">
+                    <div class="select">
 						<p><%=r.name %></p>
 						<p>Caught By: <%=r.trainer %></p>
 						<p>Height: <%=r.height %></p>
@@ -32,22 +33,12 @@
 				</li>
 			<%sid=sid+1;%>
 			<% }); %>
-            <li>
-                
-                <a href="createnew.html">
-                    <div class="display">
-                        <p style="font-size: 100px; font-size:4vw">+</p>
-                        <img />
-                    </div>
-                </a>
-            </li>
         </ul>
-		<form id="clickprofile" action="/profile" method="post">
-		<input type="hidden" id="sid" name = "sid"/>
-		</form>
 		
-		<form id="clickbattle" action="/selectbattle" method="get">
-		<button> Mock Battle </button>
+		<form id="battle" action="/battle" method="get">
+		<input type="hidden" id="sid1" name = "sid1"/>
+		<input type="hidden" id="sid2" name = "sid2"/>
+		<button> Battle! </button>
 		</form>
 		
         <div class="block"> </div>

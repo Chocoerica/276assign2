@@ -5,11 +5,10 @@ var app = express();
 
 //Add database
 const { Pool } = require('pg');
-
 var pool;
 pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl:true,
+    connectionString: process.env.DATABASE_URL//,
+    //ssl:true,
 });
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
@@ -31,7 +30,7 @@ app.get('/', (req, res) => {
         if (error)              //run this function after getting result and error from database
             res.end(error);
         var results = {'rows': result.rows};
-        console.log("in get results:", results);
+       // console.log("in get results:", results);
         res.render('pages/homepage',results); //send res(results) to 'pages/homepage'(ejs file), and also send the object called results which are the rows
     });     
 });
@@ -48,17 +47,10 @@ app.post('/profile',(req,res)=>{
             res.end(error);
         console.log(result);
         var results = {row: result.rows[0]};
-        console.log(results);
+        //console.log(results);
         res.render('pages/profile.ejs',results);
     });
 });
-/*
-app.get('/users/:id', (req,res)=>{
-    console.log(req.params.id);
-    SELECT * FROM usertab WHERE id=1; <-- can grab a specific tokimon
-    var userIDQuery = `SELECT * ftom usertab WHERE uid= ${req.params.id};`
-});
-*/
 
 //For submission of forms:
 app.post('/newToki', (req,res)=> {
@@ -96,7 +88,7 @@ app.post('/edit', (req,res)=> {
             res.end(error);
         //console.log(result);
         var results = {row: result.rows[0]};
-        console.log(results);
+        //console.log(results);
         res.render('pages/editprofile',results);
     });
     
@@ -116,3 +108,15 @@ app.post('/savechanges', (req,res)=> {
     return res.redirect('/');
 });
 
+// Implement Battle feature:
+app.get('/selectbattle',(req,res)=>{
+    var getUsersQuery = `SELECT * FROM tokimon ORDER BY id ASC;`; //use backticks
+    console.log(getUsersQuery);
+    pool.query(getUsersQuery, (error,result)=>{         //send commands to psql, then get error, result from database
+        if (error)              //run this function after getting result and error from database
+            res.end(error);
+        var results = {'rows': result.rows};
+        // console.log("in get results:", results);
+        res.render('pages/selection',results); //send res(results) to 'pages/homepage'(ejs file), and also send the object called results which are the rows
+    });    
+});

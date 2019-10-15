@@ -171,3 +171,6 @@ div.select {
     div.select:hover {
         background-color: #FFF3F3;
     }
+div.on {
+    background-color: #F06071;
+}

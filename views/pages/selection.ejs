@@ -35,10 +35,10 @@
 			<% }); %>
         </ul>
 		
-		<form id="battle" action="/battle" method="get">
+		<form id="battle" onsubmit="return check()" action="/battle" method="post">
 		<input type="hidden" id="sid1" name = "sid1"/>
 		<input type="hidden" id="sid2" name = "sid2"/>
-		<button> Battle! </button>
+		<button id="battlebutton"> Battle! </button>
 		</form>
 		
         <div class="block"> </div>

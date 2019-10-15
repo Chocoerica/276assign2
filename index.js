@@ -120,3 +120,17 @@ app.get('/selectbattle',(req,res)=>{
         res.render('pages/selection',results); //send res(results) to 'pages/homepage'(ejs file), and also send the object called results which are the rows
     });    
 });
+
+app.post('/battle', (req,res)=>{
+    var id1 = req.body.sid1;
+    var id2 = req.body.sid2;
+    console.log(`Fighting toki with id=${id1} and id= ${id2}`);
+    var getProfilesQuery = `SELECT * FROM tokimon WHERE id in (${id1}, ${id2});`;
+    pool.query(getProfilesQuery, (error,result)=>{
+        if (error)
+            res.end(error);
+        var results = {'rows': result.rows};
+        console.log("results are", results);
+        res.render('pages/battleresults', results);
+    });
+});

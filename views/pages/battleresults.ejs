@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tokimon Home</title>
+    <link rel="stylesheet" href="stylesheets/home.css" />
+	<script src="battle.js" defer></script> 
+</head>
+
+<body>
+    <a class="Header"href="/">
+        <img class ="logo" src="images/filltitle.png" alt="tokimon logo"/>
+    </a>
+    
+    <div class="white">
+        <div class="block"> </div>
+        <h2> Tokimon Battle </h2>
+		<p>  </p>
+        <ul class="tokimans">
+			
+				<li>
+                    <div>
+						<p><%=rows[0].name %></p>
+						<p>Caught By: <%=rows[0].trainer %></p>
+						<p>Height: <%=rows[0].height %></p>
+						<p>Weight: <%=rows[0].weight%></p>
+						<p>Speed: <%=rows[0].speed %></p>
+                    </div>
+				</li>
+				<li>
+                    <div>
+						<p><%=rows[1].name %></p>
+						<p>Caught By: <%=rows[1].trainer %></p>
+						<p>Height: <%=rows[1].height %></p>
+						<p>Weight: <%=rows[1].weight%></p>
+						<p>Speed: <%=rows[1].speed %></p>
+                    </div>
+				</li>
+        </ul>
+		<p id= result> </p>
+		<a>
+		
+        <div class="block"> </div>
+    </div>
+
+</body>
+</html>

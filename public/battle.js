@@ -3,21 +3,23 @@
 var totals = document.getElementsByClassName('sid');
 var names = document.getElementsByClassName('name');
 var displayres = document.getElementById('result');
+var total0 = parseInt(totals[0].innerHTML);
+var total1 = parseInt(totals[1].innerHTML);
 
 document.getElementById("container").addEventListener('click', function () {
     console.log("battle javascript");
     BattleAnimation();
     setTimeout(function () {
-        if (totals[0].innerHTML == totals[1].innerHTML) {
+        if (total0 == total1) {
             console.log('==');
             displayres.innerHTML = "THERE IS A TIE!";
         }
-        else if (totals[0].innerHTML > totals[1].innerHTML) {
-            console.log('>');
+        if (total0 >= total1) {
+            console.log(`${total0} > ${total1}`);
             displayres.innerHTML = `${names[0].innerHTML} wins!`;
         }
         else {
-            console.log('<');
+            console.log(`${total0} < ${total1}`);
             displayres.innerHTML = `${names[1].innerHTML} wins!`;
         }
     }, 3000);

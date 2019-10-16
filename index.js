@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
         if (error)              //run this function after getting result and error from database
             res.end(error);
         var results = {'rows': result.rows};
-       // console.log("in get results:", results);
+       console.log("in get results:", results);
         res.render('pages/homepage',results); //send res(results) to 'pages/homepage'(ejs file), and also send the object called results which are the rows
     });     
 });
@@ -59,8 +59,12 @@ app.post('/newToki', (req,res)=> {
     //access database
     var InsertProfileQuery = `INSERT INTO tokimon (trainer, name, speed, weight, height, fly, fight, fire, water, electric, ice, total) Values('${req.body.trainer}','${req.body.name}',${req.body.speed},${req.body.weight}, ${req.body.height}, ${req.body.fly}, ${req.body.fight}, ${req.body.fire}, ${req.body.water}, ${req.body.elect}, ${req.body.ice}, ${total});`; //use backticks
     console.log(InsertProfileQuery);
-    pool.query(InsertProfileQuery);
-    return res.redirect('/');
+    pool.query(InsertProfileQuery, (error,result)=>{
+        if (error){
+            res.end(error);
+        }
+        res.redirect('/');
+    });
 });
 
 //Delete Tokimon
@@ -70,9 +74,12 @@ app.post('/delete', (req,res)=> {
     //access database
     var DeleteProfileQuery = `DELETE FROM tokimon WHERE tokimon.id= ${id};`;
     console.log(DeleteProfileQuery);
-    pool.query(DeleteProfileQuery);
-    return res.redirect('/');
-    
+    pool.query(DeleteProfileQuery, (error,result)=>{
+        if (error){
+            res.end(error);
+        }
+        res.redirect('/');
+    });   
 });
 
 

@@ -176,7 +176,13 @@ div.on {
 }
 p.name {
     color: #386C5F;
-    font-size: 15px;
+    font-size: 20px;
+    font-family:'Bauhaus 93';
+}
+#vs {
+    position: absolute;
+    left: 47%;
+    color: #386C5F;
 }
 #result {
     padding: 8px;
@@ -195,13 +201,23 @@ p.name {
     overflow:hidden;
     margin:auto;
 }
-#right{
-    position:absolute;
-    display:block;
-    right:0px;
-}
-#left {
+#right {
+    border: dotted;
+    border-color: #FFF3F3;
     position: absolute;
     display: block;
-    left:0px;
+    right: 0px;
+    font-size: 15px;
+    width: 200px;
+    height: 200px;
+}
+#left {
+    border: dotted;
+    border-color: #FFF3F3;
+    position: absolute;
+    display: block;
+    left: 0px;
+    font-size: 15px;
+    width: 200px;
+    height: 200px;
 }

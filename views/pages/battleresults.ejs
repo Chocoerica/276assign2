@@ -16,29 +16,20 @@
     <div class="white">
         <div class="block"> </div>
         <h2> Tokimon Battle </h2>
-		<p>  </p>
-        <ul class="tokimans">
-			
-				<li>
-                    <div>
-						<p><%=rows[0].name %></p>
-						<p>Caught By: <%=rows[0].trainer %></p>
-						<p>Height: <%=rows[0].height %></p>
-						<p>Weight: <%=rows[0].weight%></p>
-						<p>Speed: <%=rows[0].speed %></p>
-                    </div>
-				</li>
-				<li>
-                    <div>
-						<p><%=rows[1].name %></p>
-						<p>Caught By: <%=rows[1].trainer %></p>
-						<p>Height: <%=rows[1].height %></p>
-						<p>Weight: <%=rows[1].weight%></p>
-						<p>Speed: <%=rows[1].speed %></p>
-                    </div>
-				</li>
-        </ul>
-		<p id= result> </p>
+		<p> Click Below to Start the Battle </p>
+        <div id="container">
+            <div id = "left">
+				<p class="name"><%=rows[0].name %></p>
+				<p>Caught By: <%=rows[0].trainer %></p>
+				<p class="sid"><%=rows[0].total%></p>
+            </div>
+	        <div id= "right">
+				<p class= "name"><%=rows[1].name %></p>
+				<p>Caught By: <%=rows[1].trainer %></p>
+				<p class="sid"><%=rows[1].total%></p>
+            </div>	
+        </div>
+		<p id= result>WHO WILL WIN?</p>
 		<a>
 		
         <div class="block"> </div>

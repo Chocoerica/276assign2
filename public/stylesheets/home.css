@@ -174,3 +174,34 @@ div.select {
 div.on {
     background-color: #F06071;
 }
+p.name {
+    color: #386C5F;
+    font-size: 15px;
+}
+#result {
+    padding: 8px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    border: solid;
+    border-color: #386C5F;
+    background-color: #ECFEEF;
+    font-size: 20px;
+}
+#container{
+    position:relative;
+    width:1000px;
+    height:300px;
+    overflow:hidden;
+    margin:auto;
+}
+#right{
+    position:absolute;
+    display:block;
+    right:0px;
+}
+#left {
+    position: absolute;
+    display: block;
+    left:0px;
+}
